@@ -1,0 +1,16 @@
+.table-row{
+    border-bottom: 1px solid #dddddd;
+    font-weight: 700;
+}
+
+.table-row:nth-of-type(even) {
+    background-color: #99d5c9;
+}
+
+.table-row:nth-of-type(odd) {
+    background-color: #cceae4;
+}
+
+.table-row:last-of-type {
+    border-bottom: 2px solid #009879;
+}
