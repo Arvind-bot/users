@@ -10,18 +10,3 @@
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 
-.user-table thead tr{
-    background-color: #009879;
-    color: #ffffff;
-    font-weight: bold;
-}
-
-.user-table thead tr th{
-    padding: 15px 15px;
-}
-
-.user-table .search-row{
-    background-color: #36b393;
-}
-
-
