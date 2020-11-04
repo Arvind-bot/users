@@ -3,6 +3,10 @@
     font-weight: 700;
 }
 
+.table-row td{
+    padding: 15px 15px;
+}
+
 .table-row:nth-of-type(even) {
     background-color: #99d5c9;
 }

@@ -8,6 +8,8 @@ class App extends React.Component {
 
     this.state = {
       users: [],
+      searchField: "",
+      type:""
     };
   }
 
@@ -19,11 +21,32 @@ class App extends React.Component {
   }
 
   render() {
+    const { users, searchField,  type} = this.state;
+
+    const filteredUsers=users.filter((user)=>{
+      let filterAgainst="";
+      
+      if(type==="first-name"){
+        filterAgainst=user.first_name.toLowerCase();
+      }else if(type==="last-name"){
+        filterAgainst=user.last_name.toLowerCase();
+      }else if(type==="email"){
+        filterAgainst=user.email.toLowerCase();
+      }
+      return filterAgainst.includes(searchField.toLowerCase());
+    })
+
     return (
       <div className="App">
-        <UserTable users={this.state.users}>
-        </UserTable>
-        
+        <UserTable
+          users={filteredUsers}
+          value={this.state.searchField}
+          type={this.state.type}
+          handleChange={(e) => this.setState({ searchField: e.target.value, type:e.target.name })}
+          handleBlur={() => {
+            this.setState({ searchField: "",type:"" });
+          }}
+        />
       </div>
     );
   }
